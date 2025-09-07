@@ -15,7 +15,7 @@ from dateutil import parser as dateparser
 # Configuration (user must set)
 # -------------------------
 # 1) Path to Google Service Account JSON credentials:
-SERVICE_ACCOUNT_JSON = r"C:\Users\akash\Keys\Pullfile.json"
+SERVICE_ACCOUNT_JSON = "C:/Users/akash/Keys/Pullfile.json"
 # 2) Google Spreadsheet ID (the file in Google Drive where sheets will be stored)
 SPREADSHEET_ID = "1yoMudkAIJ8OravhwIt--zOejXxLsn9aN4QWKn21_J0M"
 # -------------------------
@@ -32,6 +32,10 @@ VARIANCE_SHEET = "Variance Report"
 PURCHASE_REGISTER_SHEET = "Purchase Register"
 
 # Scopes for Google Sheets API
+import os
+print("File exists:", os.path.exists(SERVICE_ACCOUNT_JSON))
+print("Full path being used:", SERVICE_ACCOUNT_JSON)
+
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
           'https://www.googleapis.com/auth/drive.file',
           'https://www.googleapis.com/auth/drive']
@@ -274,7 +278,7 @@ if uploaded_gstr2b:
         st.error(f"Unable to read GSTR-2B file: {e}")
 
 if reconcile_btn:
-    if SERVICE_ACCOUNT_JSON == r"C:\Users\akash\Keys\Pullfile.json" or SPREADSHEET_ID == "1yoMudkAIJ8OravhwIt--zOejXxLsn9aN4QWKn21_J0M":
+    if SERVICE_ACCOUNT_JSON == "C:/Users/akash/Keys/Pullfile.json" or SPREADSHEET_ID == "1yoMudkAIJ8OravhwIt--zOejXxLsn9aN4QWKn21_J0M":
         st.error("Please set SERVICE_ACCOUNT_JSON and SPREADSHEET_ID at top of script before reconciling.")
     else:
         try:
