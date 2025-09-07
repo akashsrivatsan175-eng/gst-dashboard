@@ -2,7 +2,6 @@
 import streamlit as st
 from PIL import Image
 import io
-import pytesseract
 import re
 import pandas as pd
 from pyzbar.pyzbar import decode as qr_decode
@@ -82,7 +81,7 @@ def overwrite_sheet_from_df(ss, sheet_name, df):
 def image_to_text(image: Image.Image):
     # Convert to grayscale for better OCR in many cases
     gray = image.convert("L")
-    text = pytesseract.image_to_string(gray)
+    text = "OCR not available in cloud version"
     return text
 
 def detect_qr(image: Image.Image):

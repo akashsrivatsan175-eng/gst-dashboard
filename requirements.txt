@@ -1,0 +1,11 @@
+streamlit
+pillow
+pyzbar
+pandas
+openpyxl
+gspread
+oauth2client
+python-dateutil
+google-auth
+google-auth-oauthlib
+altair
